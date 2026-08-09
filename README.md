@@ -9,6 +9,12 @@ I built this because I spend most of my day in SAP CPI and the default light
 theme gets tiring. It is a Chrome extension (Manifest V3) and works in Chrome
 and Edge.
 
+[Visit the website](https://gouthams11.github.io/sap-cpi-dark-mode/)
+&nbsp;&bull;&nbsp;
+[Download version 1.3.1](https://github.com/gouthams11/sap-cpi-dark-mode/releases/download/v1.3.1/sap-cpi-dark-mode-v1.3.1.zip)
+&nbsp;&bull;&nbsp;
+[All releases](https://github.com/gouthams11/sap-cpi-dark-mode/releases)
+
 ## Features
 
 - Comfortable charcoal look that avoids a harsh pure black.
@@ -21,7 +27,7 @@ and Edge.
 
 ## Install from a release
 
-1. Download the zip from the latest release on the Releases page.
+1. Download the [latest release zip](https://github.com/gouthams11/sap-cpi-dark-mode/releases/download/v1.3.1/sap-cpi-dark-mode-v1.3.1.zip).
 2. Unzip it to a folder you will keep.
 3. Open your browser and go to the extensions page.
    - Chrome: chrome://extensions
@@ -78,7 +84,7 @@ colors readable.
 ## Privacy
 
 This extension does not collect, send, or sell any data. All settings stay in
-your browser. See PRIVACY.md for the full statement.
+your browser. See the [privacy policy](PRIVACY.md) for the full statement.
 
 ## Notes and limits
 
@@ -88,6 +94,15 @@ your browser. See PRIVACY.md for the full statement.
 - SF Pro Display is used for the toolbar popup only, with a system fallback on
   non Apple platforms. No font files are bundled.
 
+## Links
+
+- [Website](https://gouthams11.github.io/sap-cpi-dark-mode/)
+- [Repository](https://github.com/gouthams11/sap-cpi-dark-mode)
+- [Releases](https://github.com/gouthams11/sap-cpi-dark-mode/releases)
+- [Author and other projects](https://github.com/gouthams11)
+
 ## License
 
-MIT. See LICENSE.
+Released under the [MIT License](LICENSE).
+
+Not affiliated with SAP. SAP and SAP Integration Suite are trademarks of SAP SE.
