@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAP CPI Dark Mode</title>
+    <meta
+      name="description"
+      content="A comfortable charcoal dark theme for SAP Integration Suite and SAP Cloud Integration. Adjustable brightness, contrast, and warmth. Runs on SAP CPI pages only."
+    />
+    <meta name="theme-color" content="#181818" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='1' y='1' width='22' height='22' rx='5' fill='%23181818' stroke='%23303030'/%3E%3Cpath d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z' fill='%233ea6ff'/%3E%3C/svg%3E"
+    />
+
+    <style>
+      :root {
+        --bg: #181818;
+        --surface: #212121;
+        --surface-2: #282828;
+        --elevated: #2f2f2f;
+        --text: #f1f1f1;
+        --text-2: #aaaaaa;
+        --muted: #7e7e7e;
+        --border: #303030;
+        --accent: #3ea6ff;
+        --accent-2: #65b8ff;
+        --ok: #4caf72;
+        --max: 1080px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          "SF Pro Display",
+          "SF Pro Text",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        line-height: 1.6;
+        letter-spacing: -0.01em;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        color: var(--accent-2);
+      }
+
+      svg {
+        display: block;
+      }
+
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Navigation */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(24, 24, 24, 0.82);
+        backdrop-filter: saturate(140%) blur(10px);
+        -webkit-backdrop-filter: saturate(140%) blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .brand .mark {
+        width: 30px;
+        height: 30px;
+      }
+      .brand .name {
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: -0.02em;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .nav-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--text-2);
+        font-size: 14px;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 9px;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+        background: var(--surface);
+      }
+      .nav-links .gh svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+      .nav-cta {
+        color: #06121f !important;
+        background: var(--accent);
+        font-weight: 600 !important;
+      }
+      .nav-cta:hover {
+        background: var(--accent-2);
+        color: #06121f !important;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -260px;
+        left: -180px;
+        width: 720px;
+        height: 620px;
+        background: radial-gradient(
+          closest-side,
+          rgba(62, 166, 255, 0.16),
+          rgba(62, 166, 255, 0) 70%
+        );
+        pointer-events: none;
+      }
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        align-items: center;
+        padding: 72px 0 64px;
+      }
+      @media (min-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1.05fr 0.95fr;
+        }
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-2);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        border-radius: 999px;
+        margin-bottom: 18px;
+      }
+      .eyebrow .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--ok);
+      }
+      h1 {
+        margin: 0 0 14px;
+        font-size: 44px;
+        line-height: 1.08;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+      h1 .grad {
+        color: var(--accent);
+      }
+      .lead {
+        margin: 0 0 26px;
+        font-size: 18px;
+        color: var(--text-2);
+        max-width: 36ch;
+      }
+
+      .btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 12px 18px;
+        border-radius: 11px;
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      .btn svg {
+        width: 18px;
+        height: 18px;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #06121f;
+      }
+      .btn-primary:hover {
+        background: var(--accent-2);
+        color: #06121f;
+      }
+      .btn-primary svg {
+        fill: #06121f;
+      }
+      .btn-ghost {
+        background: var(--surface);
+        color: var(--text);
+        border-color: var(--border);
+      }
+      .btn-ghost:hover {
+        background: var(--surface-2);
+        color: var(--text);
+      }
+      .btn-ghost svg {
+        fill: currentColor;
+      }
+      .req {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* Device frame holding the popup image */
+      .device {
+        position: relative;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 14px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+        max-width: 380px;
+        margin: 0 auto;
+      }
+      .device .bar {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 2px 4px 12px;
+      }
+      .device .bar i {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #3a3a3a;
+        display: inline-block;
+      }
+      .device .bar .who {
+        margin-left: 8px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .popup-img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        display: block;
+      }
+
+      /* Sections */
+      section {
+        padding: 56px 0;
+        border-top: 1px solid var(--border);
+      }
+      .section-head {
+        max-width: 40ch;
+        margin-bottom: 30px;
+      }
+      .section-head h2 {
+        margin: 0 0 8px;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .section-head p {
+        margin: 0;
+        color: var(--text-2);
+      }
+
+      /* Feature cards */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 18px;
+      }
+      .card .ico {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+        display: grid;
+        place-items: center;
+        margin-bottom: 12px;
+      }
+      .card .ico svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--accent);
+        fill: none;
+        stroke-width: 1.7;
+      }
+      .card h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .card p {
+        margin: 0;
+        color: var(--text-2);
+        font-size: 14px;
+      }
+
+      /* Install steps */
+      .steps {
+        counter-reset: step;
+        display: grid;
+        gap: 12px;
+        max-width: 760px;
+      }
+      .step {
+        position: relative;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px 16px 16px 58px;
+      }
+      .step::before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        left: 14px;
+        top: 14px;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #06121f;
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+      }
+      .step b {
+        font-weight: 600;
+      }
+      .step .k {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1px 6px;
+        font-size: 13px;
+      }
+
+      /* Two column info */
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @media (min-width: 820px) {
+        .info-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 20px;
+      }
+      .panel h3 {
+        margin: 0 0 12px;
+        font-size: 17px;
+        font-weight: 600;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 9px 8px;
+        border-bottom: 1px solid var(--border);
+      }
+      th {
+        color: var(--text-2);
+        font-weight: 600;
+      }
+      td:first-child {
+        font-weight: 600;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      .active-row td:first-child {
+        color: var(--accent);
+      }
+
+      .list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .list li {
+        position: relative;
+        padding: 7px 0 7px 26px;
+        color: var(--text-2);
+        font-size: 14px;
+        border-bottom: 1px solid var(--border);
+      }
+      .list li:last-child {
+        border-bottom: none;
+      }
+      .list li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 13px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+      }
+      .list li b {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .kbd-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .kbd {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 4px 10px;
+        font-weight: 600;
+      }
+
+      /* Footer */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 40px 0 56px;
+      }
+      .foot-top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+      .foot-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .foot-links a {
+        color: var(--text-2);
+        font-size: 14px;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 9px;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .foot-links a:hover {
+        color: var(--text);
+        background: var(--surface);
+      }
+      .foot-links .gh svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+      .foot-note {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      @media (max-width: 560px) {
+        h1 {
+          font-size: 34px;
+        }
+        .nav-links a.hide-sm {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <a class="brand" href="#top" aria-label="SAP CPI Dark Mode home">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="1"
+                y="1"
+                width="22"
+                height="22"
+                rx="6"
+                fill="#282828"
+                stroke="#303030"
+              ></rect>
+              <path
+                d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"
+                fill="#3ea6ff"
+              ></path>
+            </svg>
+          </span>
+          <span class="name">SAP CPI Dark Mode</span>
+        </a>
+        <nav class="nav-links">
+          <a
+            class="gh hide-sm"
+            href="https://github.com/gouthams11/sap-cpi-dark-mode"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              ></path>
+            </svg>
+            Repository
+          </a>
+          <a
+            class="nav-cta"
+            href="https://github.com/gouthams11/sap-cpi-dark-mode/releases/download/v1.3.1/sap-cpi-dark-mode-v1.3.1.zip"
+            >Download</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main id="top" class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow"
+            ><span class="dot"></span> Version 1.3.1 for Chrome and Edge</span
+          >
+          <h1>
+            A comfortable dark theme for
+            <span class="grad">SAP Integration Suite</span>
+          </h1>
+          <p class="lead">
+            Charcoal that is easy on the eyes for long integration work.
+            Adjustable warmth to lower blue light. It runs on SAP CPI pages
+            only.
+          </p>
+          <div class="btn-row">
+            <a
+              class="btn btn-primary"
+              href="https://github.com/gouthams11/sap-cpi-dark-mode/releases/download/v1.3.1/sap-cpi-dark-mode-v1.3.1.zip"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3v10.5m0 0 4-4m-4 4-4-4M4 17.5V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1.5"
+                  fill="none"
+                  stroke="#06121f"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              Download the extension
+            </a>
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/gouthams11/sap-cpi-dark-mode"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                ></path>
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+          <p class="req">
+            Free and open source under the MIT license. No tracking. Settings
+            stay in your browser.
+          </p>
+        </div>
+
+        <!-- Product image: the extension popup rendered as inline SVG -->
+        <div class="device" aria-label="Extension popup preview">
+          <div class="bar" aria-hidden="true">
+            <i></i><i></i><i></i><span class="who">SAP CPI Dark Mode</span>
+          </div>
+          <svg
+            class="popup-img"
+            viewBox="0 0 320 480"
+            role="img"
+            aria-label="Popup with toggle on, Comfort preset selected, and fine tune sliders"
+          >
+            <style>
+              .t {
+                fill: #f1f1f1;
+              }
+              .t2 {
+                fill: #aaaaaa;
+              }
+              .mut {
+                fill: #7e7e7e;
+              }
+              .b {
+                font-weight: 600;
+              }
+              text {
+                font-family:
+                  "SF Pro Display",
+                  -apple-system,
+                  "Segoe UI",
+                  Roboto,
+                  Arial,
+                  sans-serif;
+              }
+            </style>
+
+            <rect
+              x="0"
+              y="0"
+              width="320"
+              height="480"
+              rx="14"
+              fill="#181818"
+            ></rect>
+
+            <!-- Header -->
+            <rect
+              x="16"
+              y="14"
+              width="32"
+              height="32"
+              rx="9"
+              fill="#282828"
+              stroke="#303030"
+            ></rect>
+            <g transform="translate(16,14) scale(1.333)">
+              <path
+                d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"
+                fill="#3ea6ff"
+              ></path>
+            </g>
+            <text x="58" y="28" class="t b" font-size="14">
+              SAP CPI Dark Mode
+            </text>
+            <text x="58" y="43" class="t2" font-size="11">
+              Integration Suite
+            </text>
+            <rect
+              x="258"
+              y="17"
+              width="46"
+              height="26"
+              rx="13"
+              fill="#3ea6ff"
+            ></rect>
+            <circle cx="291" cy="30" r="10" fill="#ffffff"></circle>
+
+            <!-- Status -->
+            <rect
+              x="16"
+              y="56"
+              width="288"
+              height="34"
+              rx="9"
+              fill="#122a1b"
+              stroke="#2b5c3d"
+            ></rect>
+            <text x="27" y="78" font-size="12" fill="#4caf72">
+              SAP CPI page detected.
+            </text>
+
+            <!-- Preset card -->
+            <rect
+              x="16"
+              y="100"
+              width="288"
+              height="96"
+              rx="12"
+              fill="#212121"
+              stroke="#303030"
+            ></rect>
+            <text
+              x="28"
+              y="123"
+              class="t2 b"
+              font-size="11"
+              letter-spacing="0.5"
+            >
+              COMFORT PRESET
+            </text>
+            <rect
+              x="28"
+              y="130"
+              width="264"
+              height="34"
+              rx="10"
+              fill="#181818"
+              stroke="#303030"
+            ></rect>
+            <text
+              x="75"
+              y="151"
+              class="t2 b"
+              font-size="12"
+              text-anchor="middle"
+            >
+              Soft
+            </text>
+            <rect
+              x="118"
+              y="134"
+              width="84"
+              height="26"
+              rx="7"
+              fill="#3ea6ff"
+            ></rect>
+            <text
+              x="160"
+              y="151"
+              class="b"
+              font-size="12"
+              fill="#06121f"
+              text-anchor="middle"
+            >
+              Comfort
+            </text>
+            <text
+              x="246"
+              y="151"
+              class="t2 b"
+              font-size="12"
+              text-anchor="middle"
+            >
+              Deep
+            </text>
+            <text x="28" y="187" class="mut" font-size="11">
+              Balanced charcoal with gentle warmth.
+            </text>
+
+            <!-- Fine tune card -->
+            <rect
+              x="16"
+              y="208"
+              width="288"
+              height="214"
+              rx="12"
+              fill="#212121"
+              stroke="#303030"
+            ></rect>
+            <text x="28" y="231" class="t b" font-size="13">Fine tune</text>
+            <text x="292" y="231" class="t2" font-size="12" text-anchor="end">
+              &#9662;
+            </text>
+
+            <!-- Brightness -->
+            <text x="28" y="255" class="t2" font-size="12">Brightness</text>
+            <text x="292" y="255" class="t b" font-size="12" text-anchor="end">
+              105
+            </text>
+            <rect
+              x="28"
+              y="262"
+              width="264"
+              height="4"
+              rx="2"
+              fill="#4a4a4a"
+            ></rect>
+            <rect
+              x="28"
+              y="262"
+              width="132"
+              height="4"
+              rx="2"
+              fill="#3ea6ff"
+            ></rect>
+            <circle cx="160" cy="264" r="8" fill="#3ea6ff"></circle>
+
+            <!-- Contrast -->
+            <text x="28" y="299" class="t2" font-size="12">Contrast</text>
+            <text x="292" y="299" class="t b" font-size="12" text-anchor="end">
+              80
+            </text>
+            <rect
+              x="28"
+              y="306"
+              width="264"
+              height="4"
+              rx="2"
+              fill="#4a4a4a"
+            ></rect>
+            <rect
+              x="28"
+              y="306"
+              width="88"
+              height="4"
+              rx="2"
+              fill="#3ea6ff"
+            ></rect>
+            <circle cx="116" cy="308" r="8" fill="#3ea6ff"></circle>
+
+            <!-- Warmth -->
+            <text x="28" y="343" class="t2" font-size="12">Warmth</text>
+            <text x="292" y="343" class="t b" font-size="12" text-anchor="end">
+              8
+            </text>
+            <rect
+              x="28"
+              y="350"
+              width="264"
+              height="4"
+              rx="2"
+              fill="#4a4a4a"
+            ></rect>
+            <rect
+              x="28"
+              y="350"
+              width="53"
+              height="4"
+              rx="2"
+              fill="#3ea6ff"
+            ></rect>
+            <circle cx="81" cy="352" r="8" fill="#3ea6ff"></circle>
+
+            <!-- Saturation -->
+            <text x="28" y="387" class="t2" font-size="12">Saturation</text>
+            <text x="292" y="387" class="t b" font-size="12" text-anchor="end">
+              100
+            </text>
+            <rect
+              x="28"
+              y="394"
+              width="264"
+              height="4"
+              rx="2"
+              fill="#4a4a4a"
+            ></rect>
+            <rect
+              x="28"
+              y="394"
+              width="251"
+              height="4"
+              rx="2"
+              fill="#3ea6ff"
+            ></rect>
+            <circle cx="279" cy="396" r="8" fill="#3ea6ff"></circle>
+
+            <!-- Reset -->
+            <rect
+              x="16"
+              y="434"
+              width="288"
+              height="34"
+              rx="10"
+              fill="#282828"
+              stroke="#303030"
+            ></rect>
+            <text
+              x="160"
+              y="456"
+              class="t b"
+              font-size="12"
+              text-anchor="middle"
+            >
+              Reset to Comfort
+            </text>
+          </svg>
+        </div>
+      </div>
+    </main>
+
+    <!-- Features -->
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What it does</h2>
+          <p>
+            A focused set of controls that make SAP CPI comfortable to work in
+            all day.
+          </p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="ico">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
+            <h3>Comfortable charcoal</h3>
+            <p>
+              A soft dark surface that avoids a harsh pure black and keeps text
+              easy to read.
+            </p>
+          </div>
+          <div class="card">
+            <div class="ico">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 8h10M18 8h2M4 16h4M12 16h8M14 6v4M8 14v4"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+            <h3>Presets and fine tuning</h3>
+            <p>
+              Pick Soft, Comfort, or Deep, then adjust brightness, contrast,
+              warmth, and saturation.
+            </p>
+          </div>
+          <div class="card">
+            <div class="ico">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path
+                  d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+            <h3>Less eye strain</h3>
+            <p>
+              The warmth control lowers blue light for later sessions without
+              washing out colors.
+            </p>
+          </div>
+          <div class="card">
+            <div class="ico">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3l7 3v6c0 4-3 6.5-7 9-4-2.5-7-5-7-9V6l7-3z"></path>
+              </svg>
+            </div>
+            <h3>Private by design</h3>
+            <p>
+              No tracking and no network calls. Your settings stay in your
+              browser.
+            </p>
+          </div>
+          <div class="card">
+            <div class="ico">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+                <path
+                  d="M12 2v3M12 19v3M2 12h3M19 12h3"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+            <h3>SAP CPI only</h3>
+            <p>
+              The theme applies to SAP Integration Suite pages. Other sites are
+              never touched.
+            </p>
+          </div>
+          <div class="card">
+            <div class="ico">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="6" width="18" height="12" rx="2"></rect>
+                <path
+                  d="M7 10h.01M11 10h.01M15 10h.01M7 14h10"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </div>
+            <h3>Quick toggle</h3>
+            <p>
+              Turn the theme on or off with a keyboard shortcut, the default is
+              Alt plus Shift plus D.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section id="install">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Install in a minute</h2>
+          <p>Load it as an unpacked extension in Chrome or Edge.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <b>Download the package.</b> Get
+            <a
+              href="https://github.com/gouthams11/sap-cpi-dark-mode/releases/download/v1.3.1/sap-cpi-dark-mode-v1.3.1.zip"
+              >sap-cpi-dark-mode-v1.3.1.zip</a
+            >
+            and unzip it to a folder you will keep.
+          </div>
+          <div class="step">
+            <b>Open the extensions page.</b> Go to
+            <span class="k">chrome://extensions</span> in Chrome, or
+            <span class="k">edge://extensions</span> in Edge.
+          </div>
+          <div class="step">
+            <b>Turn on Developer mode.</b> Use the switch in the top corner of
+            the extensions page.
+          </div>
+          <div class="step">
+            <b>Load unpacked.</b> Click Load unpacked and select the folder you
+            unzipped.
+          </div>
+          <div class="step">
+            <b>Open SAP CPI.</b> Use the toolbar icon to toggle the theme,
+            choose a preset, or fine tune.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Presets and shortcut -->
+    <section id="details">
+      <div class="wrap">
+        <div class="info-grid">
+          <div class="panel">
+            <h3>Comfort presets</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Preset</th>
+                  <th>Brightness</th>
+                  <th>Contrast</th>
+                  <th>Warmth</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Soft</td>
+                  <td>108</td>
+                  <td>74</td>
+                  <td>12</td>
+                </tr>
+                <tr class="active-row">
+                  <td>Comfort</td>
+                  <td>105</td>
+                  <td>80</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>Deep</td>
+                  <td>100</td>
+                  <td>92</td>
+                  <td>5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="panel">
+            <h3>Keyboard shortcut</h3>
+            <div class="kbd-row">
+              <span class="kbd">Alt</span><span>+</span
+              ><span class="kbd">Shift</span><span>+</span
+              ><span class="kbd">D</span>
+            </div>
+            <p style="color: var(--text-2); font-size: 14px; margin: 14px 0 0">
+              Turns the theme on or off. To change it, open
+              <a
+                href="https://github.com/gouthams11/sap-cpi-dark-mode#keyboard-shortcut"
+                target="_blank"
+                rel="noopener"
+                >the shortcut steps</a
+              >
+              or set your own at the browser shortcuts page. The popup shows the
+              shortcut that is currently active.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy and permissions -->
+    <section id="privacy">
+      <div class="wrap">
+        <div class="info-grid">
+          <div class="panel">
+            <h3>Permissions</h3>
+            <ul class="list">
+              <li>
+                <b>storage.</b> Saves your settings and syncs them with your
+                browser profile.
+              </li>
+              <li>
+                <b>tabs.</b> Lets the popup confirm the current tab is a SAP CPI
+                page. It does not read page content.
+              </li>
+              <li>
+                <b>Host access to SAP hosts.</b> Needed to apply the theme on
+                SAP CPI pages.
+              </li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Privacy</h3>
+            <p style="color: var(--text-2); font-size: 14px; margin: 0 0 14px">
+              This extension does not collect, send, or sell any data. There is
+              no analytics and no remote code. Everything runs locally in your
+              browser.
+            </p>
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/gouthams11/sap-cpi-dark-mode/blob/main/PRIVACY.md"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3l7 3v6c0 4-3 6.5-7 9-4-2.5-7-5-7-9V6l7-3z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              Read the privacy policy
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-top">
+          <a class="brand" href="#top" aria-label="SAP CPI Dark Mode">
+            <span class="mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect
+                  x="1"
+                  y="1"
+                  width="22"
+                  height="22"
+                  rx="6"
+                  fill="#282828"
+                  stroke="#303030"
+                ></rect>
+                <path
+                  d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"
+                  fill="#3ea6ff"
+                ></path>
+              </svg>
+            </span>
+            <span class="name">SAP CPI Dark Mode</span>
+          </a>
+          <nav class="foot-links">
+            <a
+              class="gh"
+              href="https://github.com/gouthams11/sap-cpi-dark-mode"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                ></path>
+              </svg>
+              Repository
+            </a>
+            <a
+              href="https://github.com/gouthams11/sap-cpi-dark-mode/releases"
+              target="_blank"
+              rel="noopener"
+              >Releases</a
+            >
+            <a
+              class="gh"
+              href="https://github.com/gouthams11"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                ></path>
+              </svg>
+              Profile and other projects
+            </a>
+            <a
+              href="https://github.com/gouthams11/sap-cpi-dark-mode/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener"
+              >MIT License</a
+            >
+          </nav>
+        </div>
+        <p class="foot-note">
+          SAP CPI Dark Mode version 1.3.1. Built by
+          <a href="https://github.com/gouthams11" target="_blank" rel="noopener"
+            >gouthams11</a
+          >. Not affiliated with SAP. SAP and SAP Integration Suite are
+          trademarks of SAP SE.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
